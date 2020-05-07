@@ -3,16 +3,27 @@ function Task(props) {
 }
 
 class TodoList extends React.Component {
+    addTask() {
+        console.log("add task clicked");
+        
+    }
     render() {
         // return <h1>Todo List</h1>
+        // const taskList = ;
+        const taskElements = this.props.list.map((t) =>
+            <Task name={t.name} />
+        );
         return (
             <div>
                 <h1>Todo List</h1>
                 <ol>
-                    <Task name="Welcome Task" />
+                    {taskElements}
                 </ol>
+                <button onClick={this.addTask}>
+                    Add Task
+                </button>
             </div>
-        )
+        );
     }
 }
 
